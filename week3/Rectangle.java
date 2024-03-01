@@ -1,8 +1,8 @@
 package week3;
 
 public class Rectangle {
-    public int lenght;
-    public int widht;
+    public int length;
+    public int width;
 }
 
 
