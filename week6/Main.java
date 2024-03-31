@@ -25,8 +25,8 @@ public class Main {
         System.out.println("Unsorted student list: ");
         data.print();
 
-        System.out.println("Data mahasiswa setelah sorting desc berdasarkan ipk= ");
-        data.bubbleSort();
+        System.out.println("Ascending Sorted student list ");
+        data.insertionSort();
         data.print();
 
     }
