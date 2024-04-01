@@ -1,5 +1,5 @@
 package week6;
-import java.util.Arrays;
+
 public class Ticket {
     String airlines;
     int price;
@@ -13,8 +13,10 @@ public class Ticket {
         this.price = price;
     }
 
+    
     public String toString() {
-        return "Airline: " + airlines + ", Destination: " + destination + ", Origin: " + origin + ", Price: " + price;
+        return "Airlines: " + airlines + ", Destination: " + destination + ", Origin: " + origin + ", Price: " + price;
     }
-} 
+}
+
 
