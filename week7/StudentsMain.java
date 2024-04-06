@@ -7,8 +7,10 @@ public class StudentsMain {
         Scanner s = new Scanner(System.in);
         Scanner s1 = new Scanner(System.in);
 
-        SearchStudent data = new SearchStudent();
-        int amountStudents = 5;
+        System.out.println("Enter the number of students");
+        int amountStudents = s.nextInt();
+        SearchStudent data = new SearchStudent(amountStudents);
+        //int amountStudents = 5;
 
         System.out.println("-------------------------------------------------");
         System.out.println("Input student data accordingly from smallest NIM");
@@ -37,16 +39,25 @@ public class StudentsMain {
         System.out.println("Entire Student Data");
         data.display();
 
+
         System.out.println("_____________________");
         System.out.println("_____________________");
-        System.out.print(" Search student by NIM: ");
-        int search = s.nextInt();
+        System.out.print(" Search student by Name: ");
+        String search = s1.nextLine();
+        
+        // int position = data.findSeqSearch(search);
+
+        //data.showPosition(search, position);
+
+        //data.showData(search, position);
+        System.out.println("======================");
+        System.out.print("Search student by Name: ");
         System.out.println("Using Squential Search");
-        int position = data.findSeqSearch(search);
+        //System.out.println("Using binary search");
+        int position1 = data.findSeqSearch(search);
 
-        data.showPosition(search, position);
-
-        data.showData(search, position);
+        data.showPosition(search, position1);
+        data.showData(search, position1);
     }
     
 }
