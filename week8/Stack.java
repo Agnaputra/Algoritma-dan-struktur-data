@@ -18,7 +18,7 @@ public class Stack {
         }
     }
     public boolean IsFull() {
-        if(top == size - 1) {
+        if (top == size - 1) {
             return true;
         } else {
             return false;
@@ -41,6 +41,27 @@ public class Stack {
             System.out.println("Stack is empty");
         }
     }
-    
+    public void peek() {
+        System.out.println("Top element: " + data[top]);
+    }
+    public void print() {
+        System.out.println("Stack content :");
+        for (int i = top; i >- 0; i--) {
+            System.out.println(data[i] + " ");
+
+        }
+        System.out.println("");
+    }
+    public void clear () {
+        if(!IsEmpty()) {
+            for (int i = top; i >= 0; i--) {
+                top--;
+
+            }
+            System.out.println("Stack is now empty");
+        }else{
+            System.out.println("Failed ! Stack is still empty");
+        }
+    }
     
 }
