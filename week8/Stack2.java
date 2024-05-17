@@ -1,9 +1,9 @@
 package week8;
 
 public class Stack2 {
-    int size;
-    int top;
-    Book data[];
+    private int size;
+    private int top;
+    private Book[] data;
 
     public Stack2(int size) {
         this.size = size;
@@ -18,41 +18,38 @@ public class Stack2 {
     public boolean isFull() {
         return top == size - 1;
     }
-    
 
-    public void push(Book dt) {
-        if (!isFull()) {
-            top++;
-            data[top] = dt;
+    public void push(Book book) {
+        if (isFull()) {
+            System.out.println("Stack is full. Cannot push book: " + book);
         } else {
-            System.out.println("Stack is full");
+            data[++top] = book;
+            System.out.println("Pushed book: " + book);
         }
     }
-    
 
     public void pop() {
-        if (!isEmpty()) {
-            Book book = data[top--];
-            System.out.println("Removed book: " + book.title + " by " + book.authorName + " (" + book.publishedYear + ")");
-        } else {
+        if (isEmpty()) {
             System.out.println("Stack is empty");
+        } else {
+            Book book = data[top--];
+            System.out.println("Removed book: " + book);
         }
     }
 
     public void peek() {
-        if (!isEmpty()) {
-            Book book = data[top];
-            System.out.println("Top book: " + book.title + " by " + book.authorName + " (" + book.publishedYear + ")");
-        } else {
+        if (isEmpty()) {
             System.out.println("Stack is empty");
+        } else {
+            Book book = data[top];
+            System.out.println("Top book: " + book);
         }
     }
 
     public void print() {
         System.out.println("Stack content:");
         for (int i = top; i >= 0; i--) {
-            Book book = data[i];
-            System.out.println(book.title + " by " + book.authorName + " (" + book.publishedYear + "), Pages: " + book.pagesAmount + ", Price: $" + book.price);
+            System.out.println(data[i]);
         }
     }
 
