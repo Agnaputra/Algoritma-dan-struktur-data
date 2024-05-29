@@ -1,8 +1,8 @@
 package week3;
 
-public class SquarePyramid {
+public class Squarepyramid {
     int s, h;
-    SquarePyramid(int sisi, int height){
+    Squarepyramid(int sisi, int height){
         s = sisi;
         h = height;
     }
