@@ -35,6 +35,15 @@ public class QueuePassenger {
         }
     }
 
+    public void peekRear() {
+        if (!isEmpty()) {
+            Passengers p = Q[rear];
+            System.out.println("Rear element: " + p.name + " from " + p.cityOrigin + " to " + p.cityDestination + ", Tickets: " + p.ticketAmount + ", Price: " + p.price);
+        } else {
+            System.out.println("Queue is empty");
+        }
+    }
+
     public void print() {
         if (!isEmpty()) {
             for (int i = 0; i < size; i++) {
@@ -50,7 +59,7 @@ public class QueuePassenger {
         create();
     }
 
-    public void enqueue(Passengers p) {
+    public void queue(Passengers p) {
         if (!isFull()) {
             if (isEmpty()) {
                 front = 0;
