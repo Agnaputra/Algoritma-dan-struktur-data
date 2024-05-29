@@ -7,7 +7,7 @@ public class MainPassengers {
         Scanner sc = new Scanner(System.in);
         System.out.print("Enter queue size: ");
         int max = sc.nextInt();
-        QueuePassenger queuePassenger = new QueuePassenger(max); // Corrected instantiation
+        QueuePassenger queuePassenger = new QueuePassenger(max);
 
         int choice;
         do {
@@ -15,9 +15,10 @@ public class MainPassengers {
             System.out.println("1. Enqueue");
             System.out.println("2. Dequeue");
             System.out.println("3. Peek");
-            System.out.println("4. Print");
-            System.out.println("5. Clear");
-            System.out.println("6. Exit");
+            System.out.println("4. Peek Rear");
+            System.out.println("5. Print");
+            System.out.println("6. Clear");
+            System.out.println("7. Exit");
             System.out.print("Choose an option: ");
             choice = sc.nextInt();
 
@@ -35,7 +36,7 @@ public class MainPassengers {
                     System.out.print("Enter price: ");
                     int price = sc.nextInt();
                     Passengers p = new Passengers(name, cityOrigin, cityDestination, ticketAmount, price);
-                    queuePassenger.enqueue(p);
+                    queuePassenger.queue(p);
                     break;
                 case 2:
                     Passengers dequeuedPassenger = queuePassenger.dequeue();
@@ -47,12 +48,16 @@ public class MainPassengers {
                     queuePassenger.peek();
                     break;
                 case 4:
-                    queuePassenger.print();
+                    queuePassenger.peekRear();
                     break;
                 case 5:
+                    queuePassenger.print();
+                    break;
+                case 6:
                     queuePassenger.clear();
                     break;
             }
-        } while (choice != 6);
+        } while (choice != 7);
+        sc.close();
     }
 }
