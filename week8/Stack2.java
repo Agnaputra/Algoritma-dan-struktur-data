@@ -1,14 +1,14 @@
 package week8;
 
 public class Stack2 {
-    private int size;
-    private int top;
-    private Book[] data;
+    int size;
+    int top;
+    Book[] data;
 
     public Stack2(int size) {
         this.size = size;
-        data = new Book[size];
-        top = -1;
+        this.data = new Book[size];
+        this.top = -1;
     }
 
     public boolean isEmpty() {
@@ -20,41 +20,40 @@ public class Stack2 {
     }
 
     public void push(Book book) {
-        if (isFull()) {
-            System.out.println("Stack is full. Cannot push book: " + book);
-        } else {
+        if (!isFull()) {
             data[++top] = book;
-            System.out.println("Pushed book: " + book);
+        } else {
+            System.out.println("Stack is full");
         }
     }
 
     public void pop() {
-        if (isEmpty()) {
-            System.out.println("Stack is empty");
+        if (!isEmpty()) {
+            --top;
         } else {
-            Book book = data[top--];
-            System.out.println("Removed book: " + book);
+            System.out.println("Stack is empty");
         }
     }
 
     public void peek() {
-        if (isEmpty()) {
-            System.out.println("Stack is empty");
+        if (!isEmpty()) {
+            System.out.println("Top element is: " + data[top]);
         } else {
-            Book book = data[top];
-            System.out.println("Top book: " + book);
+            System.out.println("Stack is empty");
         }
     }
 
     public void print() {
-        System.out.println("Stack content:");
-        for (int i = top; i >= 0; i--) {
-            System.out.println(data[i]);
+        if (!isEmpty()) {
+            for (int i = 0; i <= top; i++) {
+                System.out.println(data[i]);
+            }
+        } else {
+            System.out.println("Stack is empty");
         }
     }
 
     public void clear() {
         top = -1;
-        System.out.println("Stack is now empty");
     }
 }
