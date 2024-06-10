@@ -17,6 +17,8 @@ public class Book {
 
     @Override
     public String toString() {
-        return title + " by " + authorName + " (" + publishedYear + "), Pages: " + pagesAmount + ", Price: $" + price;
+        return "Title: " + title + ", Author: " + authorName + ", Year: " + publishedYear +
+                ", Pages: " + pagesAmount + ", Price: " + price;
     }
 }
+
