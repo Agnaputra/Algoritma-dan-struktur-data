@@ -1,12 +1,12 @@
 package UAS;
-
+//class
 public class TransaksiRental {
-    private static int kodeCounter = 1;
-    private int kodeTransaksi;
-    private String namaPeminjam;
-    private int lamaPinjam;
-    private double totalBiaya;
-    private BarangRental br;
+    public static int kodeCounter = 1;
+    public int kodeTransaksi;
+    public String namaPeminjam;
+    public int lamaPinjam;
+    public double totalBiaya;
+    public BarangRental br;
 
     public TransaksiRental(String namaPeminjam, int lamaPinjam, BarangRental br) {
         this.kodeTransaksi = kodeCounter++;
@@ -15,8 +15,8 @@ public class TransaksiRental {
         this.br = br;
         this.totalBiaya = calculateTotalBiaya();
     }
-
-    private double calculateTotalBiaya() {
+    //Constructor
+    public double calculateTotalBiaya() {
         double biaya = br.getBiayaSewaPerjam() * lamaPinjam;
 
         if (isMember(namaPeminjam)) {
@@ -32,7 +32,7 @@ public class TransaksiRental {
         return biaya;
     }
 
-    private boolean isMember(String namaPeminjam) {
+    public boolean isMember(String namaPeminjam) {
         return namaPeminjam.endsWith("i");
     }
 
