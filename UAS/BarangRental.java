@@ -1,11 +1,11 @@
 package UAS;
-
+//Class
 public class BarangRental {
-    private String noTNKB;
-    private String namaKendaraan;
-    private String jenis;
-    private int tahun;
-    private double biayaSewaPerjam;
+    public String noTNKB;
+    public String namaKendaraan;
+    public String jenis;
+    public int tahun;
+    public double biayaSewaPerjam;
 
     public BarangRental(String noTNKB, String namaKendaraan, String jenis, int tahun, double biayaSewaPerjam) {
         this.noTNKB = noTNKB;
@@ -14,7 +14,7 @@ public class BarangRental {
         this.tahun = tahun;
         this.biayaSewaPerjam = biayaSewaPerjam;
     }
-
+    //Constructor
     public String getNoTNKB() {
         return noTNKB;
     }
