@@ -23,14 +23,14 @@ public class BinaryTreeArray {
         }
     }
 
-    // Assignment: Add method to enter data into the tree
+    // Assignment 5: Add method to enter data into the tree
     public void add(int value) {
         if (idxLast < data.length - 1) {
             data[++idxLast] = value;
         }
     }
 
-    // Assignment: Pre-Order Traversal
+    // Assignment 6: Pre-Order Traversal
     public void traversePreOrder(int idxStart) {
         if (idxStart <= idxLast) {
             System.out.print(data[idxStart] + " ");
@@ -39,7 +39,7 @@ public class BinaryTreeArray {
         }
     }
 
-    // Assignment: Post-Order Traversal
+    // Assignment 6: Post-Order Traversal
     public void traversePostOrder(int idxStart) {
         if (idxStart <= idxLast) {
             traversePostOrder(2 * idxStart + 1);
